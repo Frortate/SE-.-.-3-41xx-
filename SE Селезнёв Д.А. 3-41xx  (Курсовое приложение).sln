@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)", "SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение).csproj", "{8B15E52A-12CB-4F1D-BE3C-A4D1365CE81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{35D81C05-9A2C-44CD-AA22-7C962AA611AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B15E52A-12CB-4F1D-BE3C-A4D1365CE81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B15E52A-12CB-4F1D-BE3C-A4D1365CE81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B15E52A-12CB-4F1D-BE3C-A4D1365CE81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B15E52A-12CB-4F1D-BE3C-A4D1365CE81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35D81C05-9A2C-44CD-AA22-7C962AA611AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D81C05-9A2C-44CD-AA22-7C962AA611AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D81C05-9A2C-44CD-AA22-7C962AA611AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D81C05-9A2C-44CD-AA22-7C962AA611AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D925402-CEFD-4389-B19B-A4B9B1600EFB}
+	EndGlobalSection
+EndGlobal
