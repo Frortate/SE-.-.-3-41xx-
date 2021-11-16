@@ -120,8 +120,8 @@
                                 BorderBrush="#293133" Background="#293133" Foreground="Black" Padding="0" Width="250" Height="325" Margin="5 0 0 0" >
 
                                     <Grid>
-                                        <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="55" Height="55" 
-                                               Source="C:\Users\Frortate\Desktop\КУРСОВАЯ\Курсовая WPF SE\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\Image\new.png" 
+                                        <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
+                                               Source="C:\Users\Frortate\Desktop\КУРСОВАЯ\Курсовая WPF SE\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\Image\isnew.png" 
                                                VerticalAlignment="Top" HorizontalAlignment="Right"/>
                                         <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
                                             <Image  MaxHeight="300" Source="{Binding Path=Poster}" Stretch="Fill"/>
