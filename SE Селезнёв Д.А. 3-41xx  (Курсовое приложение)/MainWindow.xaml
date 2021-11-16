@@ -121,8 +121,9 @@
 
                                     <Grid>
                                         <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
-                                               Source="C:\Users\Frortate\Desktop\КУРСОВАЯ\Курсовая WPF SE\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\Image\isnew.png" 
-                                               VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                                                Source="new.png"
+                                               VerticalAlignment="Top" HorizontalAlignment="Right">
+                                        </Image>
                                         <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
                                             <Image  MaxHeight="300" Source="{Binding Path=Poster}" Stretch="Fill"/>
                                             <TextBlock  Text="{Binding Path=Title}" FontFamily="Candara Light" Background="{x:Null}" FontWeight="Bold" FontSize="20" Foreground="White" Margin="5 0 0 0"/>
@@ -135,7 +136,6 @@
                             </DataTemplate>
 
                         </ListBox.ItemTemplate>
-                        <!--  Здесь в ItemSource будем добавлять данные  -->
                     </ListBox>
                 </StackPanel>
             </Grid>

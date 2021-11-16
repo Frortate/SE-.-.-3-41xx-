@@ -83,7 +83,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
 
 
 
-        #region Filters
+      
         public ObservableCollection<CategoryModel> Categories { get; set; }
         public ObservableCollection<TypeModel> Types { get; set; }
         public ObservableCollection<CityModel> Cities { get; set; }
@@ -142,7 +142,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         }
 
 
-        #endregion
+       
 
 
     }
