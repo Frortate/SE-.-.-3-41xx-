@@ -10,10 +10,10 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
     public interface IDbCrud
     {
         List<EventModel> GetEvents();
-      
-        //List<CategoryModel> GetCategories();
-        //List<TypeModel> GetTypes();
-        //List<CityModel> GetCities();
-        
+        List<EventModel> GetEventsCity(int city);
+        List<CategoryModel> GetCategories();
+        List<TypeModel> GetTypes();
+        List<CityModel> GetCities();
+
     }
 }
