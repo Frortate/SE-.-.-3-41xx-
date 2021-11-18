@@ -1,20 +1,11 @@
-﻿using DAL.Repository;
+﻿
+using Ninject;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Configuration;
+using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Util;
 
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_
@@ -27,11 +18,18 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         public MainWindow()
         {
             InitializeComponent();
-            DbRepositorySQL db = new DbRepositorySQL();
-            CRUD crud = new CRUD(db);
-            
+            //DbRepositorySQL db = new DbRepositorySQL();
+            //CRUD crud = new CRUD(db);
+
+
+            string connection = ConfigurationManager.ConnectionStrings["SEContext"].ConnectionString;
+            var kernel = new StandardKernel(new ServiceModule(connection), new NinjectRegistrations());
+
+            IDbCrud crud = kernel.Get<IDbCrud>();
+
+
             DataContext = new MainWindowViewModel(crud);
-            
+
         }
 
 
