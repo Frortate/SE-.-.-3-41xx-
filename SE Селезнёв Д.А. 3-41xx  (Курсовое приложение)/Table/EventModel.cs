@@ -24,8 +24,8 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
 
         public int CategoryId { get; set; }
 
-        public int RestrictionId { get; set; }
-        public AgesModel Restriction { get; set; }
+        public int AgeId { get; set; }
+        public AgesModel Ages { get; set; }
         public SessionModel CurrentSession { get; set; }
         public List<SessionModel> Sessions { get; set; }
 
@@ -40,8 +40,8 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             IsNew = e.IsNew;
             TypeId = e.TypeId;
             CategoryId = e.CategoryId;
-            RestrictionId = e.AgeId;
-            Restriction = new AgesModel(e.Ages);
+            AgeId = e.AgeId;
+            Ages = new AgesModel(e.Ages);
             Sessions = e.EventsOrganizers.Select(i => i.Session).FirstOrDefault().Select(i => new SessionModel(i)).ToList();
         }
         

@@ -1,4 +1,5 @@
-﻿using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface;
+﻿using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Command;
+using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,10 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         IDbCrud crud;
         IEvent iev;
 
-        public CatalogPageViewModel(IDbCrud crud) /*/*IEvent iev*/
+        public CatalogPageViewModel(IDbCrud crud, IEvent iev)
         {
             this.crud = crud;
-            //this.iev = iev;
+            this.iev = iev;
             Cities = new ObservableCollection<CityModel>(crud.GetCities());
             Categories = new ObservableCollection<CategoryModel>(crud.GetCategories());
             Types = new ObservableCollection<TypeModel>(crud.GetTypes());
@@ -153,5 +154,39 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             return TypeWindow.CatalogPage;
         }
 
+
+        private IWindowPage typePage;
+
+        public IWindowPage TypePage
+        {
+            get { return typePage; }
+
+            set
+            {
+                if (typePage != value)
+                {
+                    typePage = value;
+                    OnPropertyChanged("TypePage");
+                }
+            }
+        }
+
+
+        private RelayCommand openEvent;
+        public RelayCommand OpenEvent
+        {
+            get
+            {
+                return openEvent ??
+                    (openEvent = new RelayCommand(obj =>
+                    {
+                        string t = obj.ToString();
+                        EventModel em = Events.ToList().Find(e => e.Title == t);
+                        if (em != null) iev.ClickEvent(em);
+
+                    }
+                ));
+            }
+        }
     }
 }
