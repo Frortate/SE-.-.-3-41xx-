@@ -34,7 +34,7 @@
                 <ComboBox HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="28" Width="190" ItemsSource="{Binding Types}" SelectedItem="{Binding FilterByType}" Background="White" BorderBrush="Black" Foreground="Black" VerticalAlignment="Center" Margin="10,4,10,5" >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=Name}" FontFamily="Candara Light" FontWeight="Bold" FontSize="17" Foreground="Black"></TextBlock>
+                            <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
@@ -44,7 +44,7 @@
                 <ComboBox VerticalAlignment="Center"  Height="28" Width="190" HorizontalContentAlignment="Center" ItemsSource="{Binding Cities}" SelectedItem="{Binding FilterByCity}" Background="White" BorderBrush="Black" Foreground="Black" HorizontalAlignment="Center" Margin="10,4,10,5">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=Name}" FontFamily="Candara Light" FontWeight="Bold" FontSize="17" Foreground="Black"></TextBlock>
+                            <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
@@ -55,7 +55,7 @@
                 <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right"  Height="28" Width="190" HorizontalContentAlignment="Center" ItemsSource="{Binding Categories}" SelectedItem="{Binding FilterByCategory}" Background="White" Foreground="Black"  BorderBrush="Black" Margin="0,4,10,5" >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=Name}" FontFamily="Candara Light" FontWeight="Bold" FontSize="17" Foreground="Black"></TextBlock>
+                            <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
 
@@ -91,7 +91,7 @@
                             <DataTemplate>
 
                                 <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
-                                BorderBrush="#293133" Background="#293133" Foreground="Black" Padding="0" Width="250" Height="325" Margin="5 0 0 0" >
+                                BorderBrush="#293133" Background="#293133" Foreground="Black" Padding="0" Width="250" Height="323" Margin="5 0 0 0" >
                                     
                                     <Grid>
                                         <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
@@ -100,7 +100,7 @@
                                         </Image>
                                         <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
                                             <Image  MaxHeight="300" Source="{Binding Path=Poster}" Stretch="Fill"/>
-                                            <TextBlock  Text="{Binding Path=Title}" FontFamily="Candara Light" Background="{x:Null}" FontWeight="Bold" FontSize="20" Foreground="White" Margin="5 0 0 0"/>
+                                            <TextBlock  Text="{Binding Path=Title}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Background="{x:Null}" FontWeight="Light" FontSize="20" Foreground="White" Margin="5 0 0 0"/>
 
                                         </StackPanel>
                                     </Grid>

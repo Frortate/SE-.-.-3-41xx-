@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Height="763" Width="1390">
     <Grid>
-        
-        
+
+
 
         <Border Width="1370" Height="740" CornerRadius="25" Margin="5 -5 0 0">
             <Border.Background>
@@ -24,26 +24,28 @@
                     <ColumnDefinition Width="500"/>
                     <ColumnDefinition Width="890"/>
                 </Grid.ColumnDefinitions>
-                
-                <Image VerticalAlignment="Center" Grid.Column="0" Source="{Binding OpenEvent.Poster}" Width="400">
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
+                <Grid Grid.Column="0">
+                    <Image VerticalAlignment="Center"  Source="{Binding OpenEvent.Poster}" Width="400">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
 
-                </Image>
+                    </Image>
+                </Grid>
 
                 <Grid Grid.Column="1">
                     <ScrollViewer>
                         <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
                                 <RowDefinition Height="150"/>
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
 
-                            <Grid  Grid.Row="0">
+                            <Grid  Grid.Row="1">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1000"/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
@@ -53,7 +55,7 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
-                                    <TextBlock  FontSize="32" Text="{Binding OpenEvent.Title}"/>
+                                    <TextBlock  FontSize="35" Text="{Binding OpenEvent.Title}" FontWeight="ExtraBold" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
 
 
 
@@ -61,13 +63,13 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
 
-                                    <TextBlock  FontSize="18" Foreground="Gray" Text="{Binding OpenEvent.Ages.Age}"/>
-                                    <TextBlock  FontSize="18" Foreground="Gray" Text="+" />
+                                    <TextBlock  FontSize="20" Foreground="Green" Text="{Binding OpenEvent.Ages.Age}" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                    <TextBlock  FontSize="17" Foreground="Green" Text="+" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
 
                                 </StackPanel>
                                 <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
 
-                                    <TextBlock  FontSize="24" Width="232"><Hyperlink NavigateUri="{Binding OpenEvent.Site}" 
+                                    <TextBlock  FontSize="24" Width="232" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"><Hyperlink NavigateUri="{Binding OpenEvent.Site}" 
                                  RequestNavigate="HyperlinkToSite"><Run Text="Сайт мероприятия"/></Hyperlink></TextBlock>
 
 
@@ -75,28 +77,28 @@
                                 </StackPanel>
                             </Grid>
 
-                            <StackPanel Grid.Row="1"  Orientation="Horizontal">
-                                <TextBlock Text="Красткое описание"/>
-                                <TextBlock Margin="-100,22,-300,50" FontSize="24" Text="{Binding OpenEvent.Description}" TextWrapping="Wrap" Width="861" />
+                            <StackPanel Grid.Row="2"  Orientation="Horizontal">
+                                <TextBlock Text="Краткое описание" FontSize="32" FontWeight="Bold" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                <TextBlock Margin="-250,50,-300,50" FontSize="24" Text="{Binding OpenEvent.Description}" TextWrapping="Wrap" Width="840" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
 
 
                             </StackPanel>
 
-                            <ListBox Grid.Row="2" ItemsSource="{Binding OpenEvent.Sessions}">
+                            <ListBox Grid.Row="3" ItemsSource="{Binding OpenEvent.Sessions}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <Grid  Margin="30 10 30 0" >
+                                        <Grid  Margin="0 10 30 0" >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="1" Margin="20 0 0 0" Text="{Binding Date}"/>
+                                            <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Date}" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontSize="18"/>
 
-                                            <TextBlock Grid.Column="2" Margin="60 0 0 0">
+                                            <TextBlock Grid.Column="2" Margin="20 2 0 0" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]">
                                 <Hyperlink  NavigateUri="{Binding Organizer.Site}"
                                         RequestNavigate="HyperlinkToSite">
-                                    <TextBlock Text="{Binding Organizer.Name}"/>
+                                    <TextBlock Text="{Binding Organizer.Name}" FontWeight="Light" FontSize="15" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
                                 </Hyperlink>
                            </TextBlock>
                                         </Grid>

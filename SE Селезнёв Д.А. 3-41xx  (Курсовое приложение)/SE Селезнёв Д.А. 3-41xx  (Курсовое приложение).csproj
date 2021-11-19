@@ -85,6 +85,9 @@
     <Compile Include="OpenButEvent.xaml.cs">
       <DependentUpon>OpenButEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util\NinjectRegistrations.cs" />
     <Compile Include="Util\ServiceModule.cs" />
     <Compile Include="View\CatalogPageViewModel.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Table\TypeModel.cs" />
     <Compile Include="Table\UserModel.cs" />
     <Compile Include="View\OpenButEventViewModel.cs" />
+    <Compile Include="View\PageLoginViewModel.cs" />
     <Page Include="CatalogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,6 +122,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OpenButEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +148,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="12229.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
