@@ -24,6 +24,7 @@
                 <ColumnDefinition Width="210" />
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="210"/>
+                <ColumnDefinition Width="30"/>
             </Grid.ColumnDefinitions>
 
 
@@ -63,49 +64,57 @@
             </Border>
         </Grid>
 
-
-        <Grid Grid.Row="1"  Grid.Column="0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel x:Name="Content">
-                <StackPanel.Background>
+       
+            <Grid Grid.Row="1"  Grid.Column="0" Background="#FF293133">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            <Border Width="1370" Height="690" CornerRadius="25" Margin="5 -5 0 0">
+                <Border.Background>
                     <ImageBrush ImageSource="Fone.png"/>
-                </StackPanel.Background>
+                </Border.Background>
 
-                <ListBox HorizontalAlignment="Left" Margin="5 5 5 5" ItemsSource="{Binding Events}">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
+                <Border.Effect>
+                    <DropShadowEffect Direction="280" BlurRadius="30"/>
+                </Border.Effect>
 
-                        <DataTemplate>
 
-                            <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
+                <StackPanel x:Name="Content" >
+                    <ListBox HorizontalAlignment="Left" Margin="5 5 5 5" ItemsSource="{Binding Events}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
                                 BorderBrush="#293133" Background="#293133" Foreground="Black" Padding="0" Width="250" Height="325" Margin="5 0 0 0" >
-
-                                <Grid>
-                                    <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
+                                    
+                                    <Grid>
+                                        <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
                                                 Source="new.png"
                                                VerticalAlignment="Top" HorizontalAlignment="Right">
-                                    </Image>
-                                    <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
-                                        <Image  MaxHeight="300" Source="{Binding Path=Poster}" Stretch="Fill"/>
-                                        <TextBlock  Text="{Binding Path=Title}" FontFamily="Candara Light" Background="{x:Null}" FontWeight="Bold" FontSize="20" Foreground="White" Margin="5 0 0 0"/>
+                                        </Image>
+                                        <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
+                                            <Image  MaxHeight="300" Source="{Binding Path=Poster}" Stretch="Fill"/>
+                                            <TextBlock  Text="{Binding Path=Title}" FontFamily="Candara Light" Background="{x:Null}" FontWeight="Bold" FontSize="20" Foreground="White" Margin="5 0 0 0"/>
 
-                                    </StackPanel>
-                                </Grid>
+                                        </StackPanel>
+                                    </Grid>
 
 
-                            </Button>
-                        </DataTemplate>
+                                </Button>
+                            </DataTemplate>
 
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </Border>
         </Grid>
+     
 
     </Grid>
 </UserControl>

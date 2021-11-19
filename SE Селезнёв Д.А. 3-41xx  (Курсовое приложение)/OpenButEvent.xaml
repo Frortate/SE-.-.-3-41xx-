@@ -8,99 +8,110 @@
         mc:Ignorable="d"
         Height="763" Width="1390">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Fone.png"/>
-        </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="890"/>
-        </Grid.ColumnDefinitions>
+        
+        
 
-        <Image VerticalAlignment="Center" Grid.Column="0" Source="{Binding OpenEvent.Poster}" Width="400">
-            <Image.Effect>
-                <DropShadowEffect/>
-            </Image.Effect>
+        <Border Width="1370" Height="740" CornerRadius="25" Margin="5 -5 0 0">
+            <Border.Background>
+                <ImageBrush ImageSource="Fone.png"/>
+            </Border.Background>
 
-        </Image>
+            <Border.Effect>
+                <DropShadowEffect Direction="280" BlurRadius="30"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="890"/>
+                </Grid.ColumnDefinitions>
+                
+                <Image VerticalAlignment="Center" Grid.Column="0" Source="{Binding OpenEvent.Poster}" Width="400">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
 
-        <Grid Grid.Column="1">
-            <ScrollViewer>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150"/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
+                </Image>
 
-                    <Grid  Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
-                            <TextBlock  FontSize="32" Text="{Binding OpenEvent.Title}"/>
-                            
+                <Grid Grid.Column="1">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid  Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+                                    <TextBlock  FontSize="32" Text="{Binding OpenEvent.Title}"/>
 
 
 
-                        </StackPanel>
-                        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
-                            
-                            <TextBlock  FontSize="18" Foreground="Gray" Text="{Binding OpenEvent.Ages.Age}"/>
-                            <TextBlock  FontSize="18" Foreground="Gray" Text="+" />
-                            
-                        </StackPanel>
-                        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
-                            
-                            <TextBlock  FontSize="24" Width="232"><Hyperlink NavigateUri="{Binding OpenEvent.Site}" 
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
+
+                                    <TextBlock  FontSize="18" Foreground="Gray" Text="{Binding OpenEvent.Ages.Age}"/>
+                                    <TextBlock  FontSize="18" Foreground="Gray" Text="+" />
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+
+                                    <TextBlock  FontSize="24" Width="232"><Hyperlink NavigateUri="{Binding OpenEvent.Site}" 
                                  RequestNavigate="HyperlinkToSite"><Run Text="Сайт мероприятия"/></Hyperlink></TextBlock>
 
 
 
-                        </StackPanel>
-                    </Grid>
+                                </StackPanel>
+                            </Grid>
 
-                    <StackPanel Grid.Row="1"  Orientation="Horizontal">
-                        <TextBlock Text="Красткое описание"/>
-                        <TextBlock Margin="-100,22,-300,50" FontSize="24" Text="{Binding OpenEvent.Description}" TextWrapping="Wrap" Width="861" />
+                            <StackPanel Grid.Row="1"  Orientation="Horizontal">
+                                <TextBlock Text="Красткое описание"/>
+                                <TextBlock Margin="-100,22,-300,50" FontSize="24" Text="{Binding OpenEvent.Description}" TextWrapping="Wrap" Width="861" />
 
 
-                    </StackPanel>
+                            </StackPanel>
 
-                    <ListBox Grid.Row="2" ItemsSource="{Binding OpenEvent.Sessions}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid  Margin="30 10 30 0" >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="1" Margin="20 0 0 0" Text="{Binding Date}"/>
+                            <ListBox Grid.Row="2" ItemsSource="{Binding OpenEvent.Sessions}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid  Margin="30 10 30 0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="1" Margin="20 0 0 0" Text="{Binding Date}"/>
 
-                                    <TextBlock Grid.Column="2" Margin="60 0 0 0">
+                                            <TextBlock Grid.Column="2" Margin="60 0 0 0">
                                 <Hyperlink  NavigateUri="{Binding Organizer.Site}"
                                         RequestNavigate="HyperlinkToSite">
                                     <TextBlock Text="{Binding Organizer.Name}"/>
                                 </Hyperlink>
                            </TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
 
+                        </Grid>
+
+
+
+
+                    </ScrollViewer>
                 </Grid>
-
-
-
-
-            </ScrollViewer>
-        </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
