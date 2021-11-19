@@ -8,48 +8,54 @@
         mc:Ignorable="d"
         Height="763" Width="1390">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Fone.png"/>
-        </Grid.Background>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
-
-        <Border Grid.Column="1" CornerRadius="20" HorizontalAlignment="Center" Height="700" Width="600" Background="#FF293133">
+        <Border Width="1370" Height="740" CornerRadius="25" Margin="5 -5 0 0">
+            <Border.Background>
+                <ImageBrush ImageSource="Fone.png"/>
+            </Border.Background>
 
             <Border.Effect>
-                <DropShadowEffect BlurRadius="50" ShadowDepth="15" Opacity="1" Direction="280"/>
+                <DropShadowEffect Direction="280" BlurRadius="30"/>
             </Border.Effect>
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
 
-            <Grid Width="550" Height="650">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition Height="150"/>
-                </Grid.RowDefinitions>
+            <Border Grid.Column="1" CornerRadius="20" HorizontalAlignment="Center" Height="600" Width="500" Background="#FF293133">
 
-                <StackPanel Grid.Row="1">
-                    <TextBlock Text="Логин:" FontSize="40" Margin="40 30 10 10" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Foreground="White"/>
-                    <TextBox Text="{Binding Logined, Mode=OneWayToSource}" FontSize="35" Foreground="White" BorderBrush="White" Width="510" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Margin="10 30 10 10"/>
-                </StackPanel>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="50" ShadowDepth="15" Opacity="1" Direction="280"/>
+                </Border.Effect>
 
-                <StackPanel Grid.Row="2">
-                    <TextBlock Text="Пароль:" FontSize="40" Margin="40 30 10 10" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Foreground="White"/>
-                    <PasswordBox x:Name="PasswordBox" FontSize="35" Foreground="White" BorderBrush="White" Width="510" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Margin="10 30 10 10"/>
-                </StackPanel>
+                <Grid Width="450" Height="550">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
 
-                <Button x:Name="GoIn" Grid.Row="3" Style="{StaticResource MaterialDesignFlatButton}"
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="Логин:" FontSize="40" Margin="40 30 10 10" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Foreground="White"/>
+                        <TextBox Text="{Binding Logined, Mode=OneWayToSource}" FontSize="35" Foreground="White" BorderBrush="White" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Margin="10,30,10,10"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Text="Пароль:" FontSize="40" Margin="40 30 10 10" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Foreground="White"/>
+                        <PasswordBox x:Name="PasswordBox" FontSize="35" Foreground="White" BorderBrush="White" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Margin="10,30,10,10"/>
+                    </StackPanel>
+
+                    <Button x:Name="GoIn" Grid.Row="3" Style="{StaticResource MaterialDesignFlatButton}"
                         HorizontalContentAlignment="Center" Background="White" 
                         BorderBrush="Transparent" 
                         Foreground="#000" Height="70" Width="300" Content="Войти" 
                         FontSize="30" FontWeight="Normal" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]">
-                </Button>
-            </Grid>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
         </Border>
-
     </Grid>
 </UserControl>

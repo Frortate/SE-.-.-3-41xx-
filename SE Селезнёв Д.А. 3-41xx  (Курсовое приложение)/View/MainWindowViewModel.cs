@@ -62,6 +62,21 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             }
         }
 
+
+        private RelayCommand openLogin;
+        public RelayCommand OpenLogin
+        {
+            get
+            {
+                return openLogin ??
+                    (openLogin = new RelayCommand(obj =>
+                    {
+                        TypePage = new PageLoginViewModel(crud);
+                    }
+                ));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
