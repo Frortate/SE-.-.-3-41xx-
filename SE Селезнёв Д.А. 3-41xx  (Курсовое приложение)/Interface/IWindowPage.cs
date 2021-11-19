@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface
 {
-    public enum TypeWindow { MainWindow, EventWindow, FavouriteWindow, ReportWindow }
+    public enum TypeWindow { CatalogPage, EventPage, LikeEventsPage, ReportPage }
     public interface IWindowPage
     {
         TypeWindow GetWindowType();

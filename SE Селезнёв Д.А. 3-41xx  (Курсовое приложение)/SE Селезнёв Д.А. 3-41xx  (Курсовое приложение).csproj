@@ -76,10 +76,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CatalogPage.xaml.cs">
+      <DependentUpon>CatalogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Interface\IEvent.cs" />
     <Compile Include="Interface\IWindowPage.cs" />
     <Compile Include="Util\NinjectRegistrations.cs" />
     <Compile Include="Util\ServiceModule.cs" />
+    <Compile Include="View\CatalogPageViewModel.cs" />
     <Compile Include="View\MainWindowViewModel.cs" />
     <Compile Include="Table\AgesModel.cs" />
     <Compile Include="Table\CategoryModel.cs" />
@@ -92,6 +96,10 @@
     <Compile Include="Table\SessionModel.cs" />
     <Compile Include="Table\TypeModel.cs" />
     <Compile Include="Table\UserModel.cs" />
+    <Page Include="CatalogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
