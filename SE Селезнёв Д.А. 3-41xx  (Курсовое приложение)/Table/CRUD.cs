@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DAL.Interface;
 using DAL;
 using DAL.Repository;
+using DAL.Table;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table
 {
@@ -46,6 +47,15 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             return db.Types.GetAll().Select(i => new TypeModel(i)).ToList();
         }
 
+        public UserModel User(int id)
+        {
+            return new UserModel(db.Users.GetItem(id));
+        }
 
+        public UserModel LoginTrue(UserModel user)
+        {
+            User u = db.Users.GetAll().Where(i => i.Login == user.Login).Where(i => i.Password == user.Password).FirstOrDefault();
+            return new UserModel(u);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table;
 using Ninject.Modules;
+using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Util
 {
@@ -8,6 +9,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         public override void Load()
         {
             Bind<IDbCrud>().To<CRUD>();
+            Bind<ILogin>().To<PageLogin>().InSingletonScope();
         }
     }
 }

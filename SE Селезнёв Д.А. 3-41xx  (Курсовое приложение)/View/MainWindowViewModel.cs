@@ -63,20 +63,6 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         }
 
 
-        private RelayCommand openLogin;
-        public RelayCommand OpenLogin
-        {
-            get
-            {
-                return openLogin ??
-                    (openLogin = new RelayCommand(obj =>
-                    {
-                        TypePage = new PageLoginViewModel(crud);
-                    }
-                ));
-            }
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
@@ -85,7 +71,50 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         }
 
 
+        private bool wentIn;
+        public bool WentIn
+        {
+            get { return wentIn; }
+            set { wentIn = value; ; OnPropertyChanged("WentIn"); }
+        }
 
+        private RelayCommand logIn;
+        public RelayCommand LogIn
+        {
+            get
+            {
+                return logIn ??
+                    (logIn = new RelayCommand(obj =>
+                    {
+                        PageLogin login = new PageLogin(crud);
+                        bool? result = login.ShowDialog();
+                        if (result == true)
+                        {
+                            WentIn = true;
+                        }
+                    }
+                ));
+            }
+        }
+
+        private RelayCommand loginOut;
+        public RelayCommand LoginOut
+        {
+            get
+            {
+                return loginOut ??
+                    (loginOut = new RelayCommand(obj =>
+                    {
+                        WentIn = false;
+                        
+                        if (TypePage.GetWindowType() != TypeWindow.CatalogPage)
+                            TypePage = new CatalogPageViewModel(crud, this);
+                    }
+                ));
+            }
+        }
+
+        
     }
 
 

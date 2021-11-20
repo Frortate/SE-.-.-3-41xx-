@@ -6,7 +6,8 @@ using System.Windows;
 using System.Windows.Input;
 using System.Configuration;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Util;
-
+using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_
 {
@@ -18,8 +19,6 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         public MainWindow()
         {
             InitializeComponent();
-            //DbRepositorySQL db = new DbRepositorySQL();
-            //CRUD crud = new CRUD(db);
 
 
             string connection = ConfigurationManager.ConnectionStrings["SEContext"].ConnectionString;
@@ -48,6 +47,13 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             this.DragMove();
         }
 
-       
+        private void ButtLogout_Click(object sender, RoutedEventArgs e)
+        {
+            var notyfy = new ToastContentBuilder();
+            notyfy.AddText("Жаль что вы ушли :( \nБудем ждать вас снова");
+            notyfy.AddAppLogoOverride(new Uri
+                (@"C:\Users\Frortate\Desktop\КУРСОВАЯ\Курсовая WPF SE\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\SE Селезнёв Д.А. 3-41xx  (Курсовое приложение)\Image\notpage.png"));
+            notyfy.Show();
+        }
     }
 }

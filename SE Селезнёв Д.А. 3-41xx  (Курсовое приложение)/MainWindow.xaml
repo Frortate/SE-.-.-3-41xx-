@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
-        Title="MainWindow" Height="824" Width="1480" WindowStyle="None" AllowsTransparency="True" Background="#293133">
+        ResizeMode="NoResize" Background="Transparent"
+        Title="MainWindow" Height="900" Width="1560" WindowStyle="None" AllowsTransparency="True">
 
 
 
@@ -23,9 +23,8 @@
             <local:OpenButEvent/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type local:PageLoginViewModel}">
-            <local:PageLogin/>
-        </DataTemplate>
+
+
 
     </Window.Resources>
 
@@ -37,161 +36,210 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtLogin">
         </EventTrigger>
 
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtLogout">
+        </EventTrigger>
+
 
     </Window.Triggers>
 
 
     <Grid>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-
-
-
-
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1390"/>
-                <ColumnDefinition Width="90"/>
-
-            </Grid.ColumnDefinitions>
+        <Border Height="828" Width="1488" CornerRadius="5" Background="#FF293133" >
+            <Border.Effect>
+                <DropShadowEffect Direction="280" BlurRadius="30" Opacity="0.7"/>
+            </Border.Effect>
+            <Grid Height="824" Width="1480">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0" Grid.Column="0" Background="#293133" x:Name="Header" MouseDown="Header_MouseDown">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="434"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="5,4,5,6" >
-                    <StackPanel.Background>
-                        <ImageBrush ImageSource="icpnw.png"/>
-                    </StackPanel.Background>
 
-                </StackPanel>
-                <StackPanel Grid.Column="1" >
-                    <TextBlock FontSize="31" FontStretch="Expanded" HorizontalAlignment="Center" 
+
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1390"/>
+                        <ColumnDefinition Width="90"/>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid Grid.Row="0" Grid.Column="0" Background="#293133" x:Name="Header" MouseDown="Header_MouseDown">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="434"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Grid.Background>
+                                <RadialGradientBrush RadiusY="0.5" RadiusX="0.5">
+                                    <GradientStop Color="#293133" Offset="1"/>
+                                    <GradientStop Color="#FF7A1515" />
+                                </RadialGradientBrush>
+                            </Grid.Background>
+                            <StackPanel Margin="5,4,5,6" >
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="notpage.png"/>
+                                </StackPanel.Background>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Grid.Column="1" >
+                            <TextBlock FontSize="31" FontStretch="Expanded" HorizontalAlignment="Center" 
                                            FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" 
-                                           Foreground="White" Margin="10,9,119,12" Width="271" TextDecorations="{x:Null}">
+                                           Foreground="White" Margin="27,13,136,12" Width="271" TextDecorations="{x:Null}">
                                     <Run Text="Поиск мероприятия"/></TextBlock>
-                </StackPanel>
+                        </StackPanel>
 
-            </Grid>
+                    </Grid>
 
-            <Grid Grid.Row="0" Grid.Column ="1" Background="#293133" MouseDown="Header_MouseDown"/>
+                    <Grid Grid.Row="0" Grid.Column ="1" Background="#293133" MouseDown="Header_MouseDown"/>
 
-            <Grid Grid.Row="1" Background="Black"/>
-
-
-
-
-            <Grid Grid.Row="2">
-                <ContentControl  Content="{Binding TypePage}"/>
-            </Grid>
-
-        </Grid>
+                    <Grid Grid.Row="1" Background="Black"/>
 
 
 
 
+                    <Grid Grid.Row="2" Background="#FF293133">
+                        <ContentControl  Content="{Binding TypePage}"/>
+                    </Grid>
+
+                </Grid>
 
 
-        <Grid  Background="#293133" HorizontalAlignment="Right" Width="90" MaxHeight="1024">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
 
-            </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" MouseDown="Header_MouseDown">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="45"/>
-                    <ColumnDefinition Width="3"/>
-                    <ColumnDefinition Width="45"/>
-                </Grid.ColumnDefinitions>
 
-                <StackPanel  Grid.Column="1" Margin="0" HorizontalAlignment="Right" Orientation="Horizontal" RenderTransformOrigin="0.491,0.533" Width="40"  >
-                    <Button x:Name="ButtMinWind" Width="40" Height="40" Background="#FFFBFBFB" Click="ButtMinWind_Click"
+
+                <Grid  Background="#293133" HorizontalAlignment="Right" Width="90" MaxHeight="1024">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" MouseDown="Header_MouseDown">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition Width="3"/>
+                            <ColumnDefinition Width="45"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel  Grid.Column="1" Margin="0" HorizontalAlignment="Right" Orientation="Horizontal" RenderTransformOrigin="0.491,0.533" Width="40"  >
+                            <Button x:Name="ButtMinWind" Width="40" Height="40" Background="#FFFBFBFB" Click="ButtMinWind_Click"
                             Style="{StaticResource MaterialDesignFlatButton}" Foreground="#000">
-                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="minus" Height="30" Width="30"/>
-                    </Button>
-                </StackPanel>
+                                <materialDesign:PackIcon HorizontalAlignment="Center" Kind="minus" Height="30" Width="30"/>
 
-                <StackPanel Grid.Column="3" Margin="0 0 0 0" HorizontalAlignment="Left" Orientation="Horizontal" Width="40" >
-                    <Button x:Name="ButtonCloseWindow"
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="3" Margin="0 0 0 0" HorizontalAlignment="Left" Orientation="Horizontal" Width="40" >
+                            <Button x:Name="ButtonCloseWindow"
                             Width="40" Height="40" Background="Black" Click="ButtCloseWind_Click"
                             Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFF0F0F0" Margin="0,10">
-                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="close" Height="30" Width="30" RenderTransformOrigin="0.5,0.5" >
-                            <materialDesign:PackIcon.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="90"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </materialDesign:PackIcon.RenderTransform>
-                        </materialDesign:PackIcon>
-                    </Button>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Row="1"  Background="Black"/>
-            <Grid Grid.Row="2"  Background="#293133"/>
+                                <materialDesign:PackIcon HorizontalAlignment="Center" Kind="close" Height="30" Width="30" RenderTransformOrigin="0.5,0.5" >
+                                    <materialDesign:PackIcon.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </materialDesign:PackIcon.RenderTransform>
+                                </materialDesign:PackIcon>
 
-            <Grid Grid.Row="3" >
-                <Button x:Name="ButtOpenCatalog" Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding OpenCatalog}"
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1"  Background="Black"/>
+                    <Grid Grid.Row="2"  Background="#293133"/>
+
+                    <Grid Grid.Row="3" >
+                        <Button x:Name="ButtOpenCatalog" Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding OpenCatalog}"
                          Height="Auto" HorizontalContentAlignment="Left" Background="White" BorderBrush="Transparent" Foreground="#000" Grid.RowSpan="2" Margin="5,7,4,3" >
-                    <materialDesign:PackIcon   Kind="cardsearch" Foreground="#DD000000" Height="45" Width="45" Margin="2 0 0 0"/>
-                </Button>
-            </Grid>
+                            <materialDesign:PackIcon   Kind="cardsearch" Foreground="#DD000000" Height="45" Width="45" Margin="2 0 0 0"/>
+                            <Button.ToolTip>
+                                <ToolTip Background="#60FFFFFF" Foreground="White" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                    <TextBlock Text="Каталог мероприятий" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontSize="14" />
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
 
-            <Grid Grid.Row="4" >
-                <Button x:Name="ButtOpenFavourite" Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                    <Grid Grid.Row="4" >
+                        <Button x:Name="ButtOpenFavourite" Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                        Visibility="{Binding WentIn, Converter={StaticResource BooleanToVisibilityConverter}}"
                          Height="Auto" HorizontalContentAlignment="Left" Background="White" BorderBrush="Transparent" Foreground="#000" Grid.RowSpan="2" Margin="5,7,4,3">
-                    <materialDesign:PackIcon   Kind="googlefit" Foreground="#DD000000" Height="45" Width="45" Margin="2 0 0 0"/>
-                </Button>
-            </Grid>
+                            <materialDesign:PackIcon   Kind="googlefit" Foreground="#DD000000" Height="45" Width="45" Margin="2 0 0 0"/>
+                            <Button.ToolTip>
+                                <ToolTip Background="#60FFFFFF" Foreground="White" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                    <TextBlock Text="Избранное" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontSize="14" />
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
 
 
 
-            <Grid Grid.Row="5" >
-                <Button x:Name="ButtReport" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#000"
+                    <Grid Grid.Row="5" >
+                        <Button x:Name="ButtReport" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#000"
+                        Visibility="{Binding WentIn, Converter={StaticResource BooleanToVisibilityConverter}}"
                         HorizontalContentAlignment="Center" Background="White" BorderBrush="Transparent" Height="Auto" Margin="5,7,4,3" >
-                    <materialDesign:PackIcon   Kind="clipboardtextoutline" Foreground="#DD000000" Height="45" Width="45" Margin="0 0 0 0"/>
-                </Button>
-            </Grid>
+                            <materialDesign:PackIcon   Kind="clipboardtextoutline" Foreground="#DD000000" Height="45" Width="45" Margin="0 0 0 0"/>
+                            <Button.ToolTip>
+                                <ToolTip Background="#60FFFFFF" Foreground="White" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                    <TextBlock Text="Отчёт о ваших мероприятиях" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"  FontSize="14"/>
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
 
-            <Grid Grid.Row="7">
-                <Button x:Name="ButtLogin"  Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding OpenLogin}"
+                    <Grid Grid.Row="6" >
+                        <Button x:Name="ButtLogout" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding LoginOut}"
+                        Visibility="{Binding WentIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        HorizontalContentAlignment="Center" Background="White" BorderBrush="Transparent" Foreground="#000" Height="Auto" Margin="5,7,4,3" Click="ButtLogout_Click" >
+                            <materialDesign:PackIcon   Kind="logoutvariant" Foreground="#DD000000" Height="45" Width="45" Margin="0 0 0 0"/>
+                            <Button.ToolTip>
+                                <ToolTip Background="#60FFFFFF" Foreground="White" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                    <TextBlock Text="Выйти" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontSize="14" />
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="7">
+                        <Button x:Name="ButtLogin"  Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding LogIn}"
+                        Visibility="{Binding WentIn, Converter={StaticResource InverseBoolToVisConverter}}"
                          HorizontalContentAlignment="Center" Background="White" BorderBrush="Transparent" Foreground="#DD000000" Height="Auto" Margin="5,7,4,13" >
-                    <materialDesign:PackIcon   Kind="loginvariant" Height="45" Width="45" Margin="0 0 0 0" />
-                </Button>
+                            <materialDesign:PackIcon   Kind="loginvariant" Height="45" Width="45" Margin="0 0 0 0" />
+                            <Button.ToolTip>
+                                <ToolTip Background="#60FFFFFF" Foreground="White" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                    <TextBlock Text="Войти" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontSize="14" />
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+
+
+                </Grid>
             </Grid>
-
-            <Grid Grid.Row="6" >
-                <Button x:Name="ButtLogout" Style="{StaticResource MaterialDesignFlatButton}"
-                        HorizontalContentAlignment="Center" Background="White" BorderBrush="Transparent" Foreground="#000" Height="Auto" Margin="5,7,4,3" >
-                    <materialDesign:PackIcon   Kind="logoutvariant" Foreground="#DD000000" Height="45" Width="45" Margin="0 0 0 0"/>
-                </Button>
-
-            </Grid>
-
-
-
-
-        </Grid>
+        </Border>
     </Grid>
 
 

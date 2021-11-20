@@ -107,7 +107,9 @@
                                             </Image>
                                             <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
                                                 <Image  MaxHeight="300" Source="{Binding Path=Poster}" Stretch="Fill" Margin="0 -1 0 0"/>
-                                                <TextBlock  Text="{Binding Path=Title}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" Background="{x:Null}" FontWeight="Light" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+                                                
+                                                <TextBlock  Text="{Binding Path=Title}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" 
+                                                            FontWeight="Light" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
 
                                             </StackPanel>
                                         </Grid>

@@ -15,5 +15,8 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         List<TypeModel> GetTypes();
         List<CityModel> GetCities();
 
+        UserModel User(int id);
+        UserModel LoginTrue(UserModel user);
+
     }
 }
