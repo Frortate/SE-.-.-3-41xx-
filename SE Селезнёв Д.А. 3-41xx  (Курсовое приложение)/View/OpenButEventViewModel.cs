@@ -1,4 +1,5 @@
-﻿using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface;
+﻿using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Command;
+using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
 
             this.crud = crud;
             this.iev = iev;
+
+            logUser = iev.GetUser();
+            WentIn = logUser == -1 ? false : true;
+            if (WentIn)
+                CheckedForLike();
         }
 
 
@@ -50,6 +56,44 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         TypeWindow IWindowPage.GetWindowType()
         {
             return TypeWindow.EventPage;
+        }
+
+        private int logUser;
+        public bool WentIn { get; set; }
+
+
+        private RelayCommand clickLike;
+        public RelayCommand ClickLike
+        {
+            get
+            {
+                return clickLike ??
+                    (clickLike = new RelayCommand(obj =>
+                    {
+
+                        int sessionId = (int)obj;
+                        if (WentIn == false)
+                            return;
+
+                        bool result = crud.Like(logUser, sessionId);
+                        CheckedForLike();
+                    }
+                ));
+            }
+        }
+
+        private void CheckedForLike()
+        {
+            EventModel ev = OpenEvent;
+            foreach (SessionModel s in ev.Sessions)
+            {
+                if (crud.User(logUser).Sessions.Where(i => i.ID == s.ID).FirstOrDefault() != null)
+                    s.IsFavourite = true;
+                else
+                    s.IsFavourite = false;
+            }
+            OpenEvent = ev;
+            OnPropertyChanged("CurrentEvent");
         }
     }
 }

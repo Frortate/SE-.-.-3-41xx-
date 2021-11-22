@@ -7,5 +7,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
     public interface IEvent
     {
         void ClickEvent(EventModel em);
+
+        int GetUser();
     }
 }

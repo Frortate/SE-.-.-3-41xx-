@@ -91,6 +91,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
                         if (result == true)
                         {
                             WentIn = true;
+                            Userlog = crud.User(login.GetUserlog().ID);
                         }
                     }
                 ));
@@ -106,7 +107,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
                     (loginOut = new RelayCommand(obj =>
                     {
                         WentIn = false;
-                        
+                        Userlog = null;
                         if (TypePage.GetWindowType() != TypeWindow.CatalogPage)
                             TypePage = new CatalogPageViewModel(crud, this);
                     }
@@ -114,7 +115,27 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             }
         }
 
-        
+        private RelayCommand openLikeEvPage;
+        public RelayCommand OpenLikeEvPage
+        {
+            get
+            {
+                return openLikeEvPage ??
+                    (openLikeEvPage = new RelayCommand(obj =>
+                    {
+                        TypePage = new LikeUEventPageViewModel(crud, this, Userlog.ID);
+
+                    }
+                ));
+            }
+        }
+
+        private UserModel Userlog;
+
+        public int GetUser()
+        {
+            return Userlog == null ? -1 : Userlog.ID;
+        }
     }
 
 

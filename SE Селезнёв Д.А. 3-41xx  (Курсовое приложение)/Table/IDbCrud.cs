@@ -18,5 +18,9 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         UserModel User(int id);
         UserModel LoginTrue(UserModel user);
 
+        List<EventModel> UserSessions(int userId);
+
+        bool Like(int userId, int sessionId);
+
     }
 }

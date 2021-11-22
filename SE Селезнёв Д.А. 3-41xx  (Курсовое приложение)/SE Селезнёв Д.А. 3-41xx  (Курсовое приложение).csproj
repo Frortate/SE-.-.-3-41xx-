@@ -71,15 +71,23 @@
     <Compile Include="Interface\IEvent.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IWindowPage.cs" />
+    <Compile Include="IsLikeConvert.cs" />
+    <Compile Include="LikeUEventPage.xaml.cs">
+      <DependentUpon>LikeUEventPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OpenButEvent.xaml.cs">
       <DependentUpon>OpenButEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageLogin.xaml.cs">
       <DependentUpon>PageLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReminderPage.xaml.cs">
+      <DependentUpon>ReminderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util\NinjectRegistrations.cs" />
     <Compile Include="Util\ServiceModule.cs" />
     <Compile Include="View\CatalogPageViewModel.cs" />
+    <Compile Include="View\LikeUEventPageViewModel.cs" />
     <Compile Include="View\MainWindowViewModel.cs" />
     <Compile Include="Table\AgesModel.cs" />
     <Compile Include="Table\CategoryModel.cs" />
@@ -95,6 +103,10 @@
     <Compile Include="View\OpenButEventViewModel.cs" />
     <Compile Include="View\PageLoginViewModel.cs" />
     <Page Include="CatalogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LikeUEventPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReminderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

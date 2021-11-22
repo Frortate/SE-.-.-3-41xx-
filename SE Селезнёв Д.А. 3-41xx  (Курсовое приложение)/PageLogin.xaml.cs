@@ -22,7 +22,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
     /// </summary>
     public partial class PageLogin : Window, ILogin
     {
-        UserModel loggedUser;
+        UserModel Userlog;
 
         public PageLogin(IDbCrud db)
         {
@@ -44,14 +44,14 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         public void CloseLogin(bool? resultLog, UserModel user)
         {
             DialogResult = resultLog;
-            loggedUser = user;
+            Userlog = user;
             this.Close();
             
         }
 
-        public UserModel GetLoggedUser()
+        public UserModel GetUserlog()
         {
-            return loggedUser;
+            return Userlog;
         }
 
         private void GoIn_Click(object sender, RoutedEventArgs e)

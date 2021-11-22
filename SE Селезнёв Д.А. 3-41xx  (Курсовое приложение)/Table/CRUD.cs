@@ -57,5 +57,36 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             User u = db.Users.GetAll().Where(i => i.Login == user.Login).Where(i => i.Password == user.Password).FirstOrDefault();
             return new UserModel(u);
         }
+
+        public List<EventModel> UserSessions(int userId)
+        {
+            return db.Users.GetItem(userId).Session.Select(i => new EventModel(i.EventsOrganizers.Event, new SessionModel(i))).ToList();
+        }
+
+        public bool Like(int userId, int sessionId)
+        {
+            User user = db.Users.GetItem(userId);
+            Session session = user.Session.FirstOrDefault(i => i.ID == sessionId);
+            bool result;
+            if (session != null)
+            {
+                user.Session.Remove(session);
+                result = false;
+            }
+            else
+            {
+                user.Session.Add(db.Sessions.GetItem(sessionId));
+                result = true;
+            }
+
+            Save();
+            return result;
+        }
+
+        public bool Save()
+        {
+            if (db.Save() > 0) return true;
+            return false;
+        }
     }
 }

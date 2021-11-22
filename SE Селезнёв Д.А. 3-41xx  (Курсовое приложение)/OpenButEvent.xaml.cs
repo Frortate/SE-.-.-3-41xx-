@@ -31,5 +31,11 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.Foreground = b.Foreground == Brushes.Gray ? Brushes.Green : Brushes.Gray;
+        }
     }
 }
