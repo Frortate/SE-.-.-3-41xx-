@@ -3,10 +3,138 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_"
         mc:Ignorable="d"
-        Title="ReminderPage" Height="450" Width="800">
-    <Grid>
-        
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True"
+        Height="500" Width="800" Background="Transparent" Foreground="#00000000">
+    <Grid Margin="0,0,10,0">
+        <Border Height="470" Width="450" CornerRadius="10">
+            <Border.Background>
+                <ImageBrush ImageSource="Fone.png"/>
+            </Border.Background>
+
+
+            <Border.Effect>
+                <DropShadowEffect Direction="280" BlurRadius="30"/>
+            </Border.Effect>
+
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <StackPanel Margin="0 5 10 5"  >
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="notpage.png"/>
+                            </StackPanel.Background>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Grid.Column="1" >
+                        <TextBlock FontSize="31" FontStretch="Expanded" HorizontalAlignment="Center" 
+                                           FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" 
+                                           Foreground="Black" Margin="-20 15 0 0" Width="271" TextDecorations="{x:Null}">
+                                    <Run Text="Поиск мероприятия"/></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="0 0 0 0" HorizontalAlignment="Right" Orientation="Horizontal" Width="40" >
+                        <Button x:Name="ButtonCloseWindow" 
+                            Width="40" Height="Auto" Background="Black" Click="ButtCloseWind_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFF0F0F0" Margin="0,10,0,10">
+                            <materialDesign:PackIcon HorizontalAlignment="Center" Kind="close" Height="30" Width="30" RenderTransformOrigin="0.5,0.5" >
+                                <materialDesign:PackIcon.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </materialDesign:PackIcon.RenderTransform>
+                            </materialDesign:PackIcon>
+                        </Button>
+                    </StackPanel>
+                    
+                </Grid>
+                
+                <Grid Grid.Row="1" Background="Black"/>
+
+                <Grid Grid.Row="2">
+                    <ScrollViewer Width="435">
+                        <StackPanel Margin="10" Grid.Row="1">
+                            <TextBlock FontSize="18" FontWeight="Bold" Foreground="Black" Text="Ваши мероприятия на ближайшие 7 дней" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                            <TextBlock FontSize="18" FontWeight="Bold" Foreground="Black" Text="Не пропустите!" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+
+
+                            <ListBox ItemsSource="{Binding NotifyLikeEvents}" HorizontalAlignment="Left">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+
+                                <ListBox.ItemTemplate>
+
+                                    <DataTemplate>
+                                        <Border Background="#293133" CornerRadius="10">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="110"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image Grid.Column="0" Margin="10 0 0 0" Width="100" MaxHeight="130" Stretch="Fill" Height="130"  Source="{Binding Path=Poster}">
+                                                    <Image.Effect>
+                                                        <DropShadowEffect BlurRadius="10" ShadowDepth="3" Opacity="0.1" Direction="280" Color="White"/>
+                                                    </Image.Effect>
+                                                </Image>
+                                                <StackPanel Grid.Column="1" Margin="15" >
+                                                    <TextBlock FontSize="18" FontWeight="Bold" Foreground="White" Text="Информация о мероприятии:" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                                    
+                                                    <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
+                                                        <TextBlock Grid.Column="0" FontSize="16" Text="{Binding Path=Title}" Foreground="White" Margin="-15 2 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
+                                                        <TextBlock FontSize="14" Foreground="#bd4f4f" Text="{Binding Path=Ages.Age}" Margin="10 5 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Normal" Background="{x:Null}"/>
+                                                        <TextBlock FontSize="12" Foreground="#bd4f4f" Margin="0 2 0 0" Text="+" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Normal"/>
+                                                    </StackPanel>
+
+                                                    <TextBlock FontSize="16" Foreground="#daf2bb" Text="{Binding Path=CurSession.Date}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                                    <TextBlock FontSize="16" Foreground="White" Text="{Binding Path=CurSession.Organizer.Place.City.Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                                    <TextBlock FontSize="16" Foreground="White" Text="{Binding Path=CurSession.Organizer.Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                                    <TextBlock FontSize="16" Foreground="White" Text="{Binding Path=CurSession.Organizer.Place.Address}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+
+                                                    <TextBlock Grid.Column="1" Margin="0 1 0 0" FontWeight="Light" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]">
+                                                                        
+                                                         <Hyperlink  NavigateUri="{Binding Path=CurSession.Organizer.Site}" RequestNavigate="HyperlinkToSite" Foreground="#FF32DCAE">
+                                                            <TextBlock  Foreground="#FF32DCAE" FontSize="16" Text="{Binding Path=CurSession.Organizer.Site}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]"/>
+                                                         </Hyperlink>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+
+                                </ListBox.ItemTemplate>
+
+                            </ListBox>
+
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+                
+
+
+        </Border>
+
+       
     </Grid>
 </Window>

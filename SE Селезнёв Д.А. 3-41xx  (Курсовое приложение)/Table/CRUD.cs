@@ -83,6 +83,11 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             return result;
         }
 
+        public List<EventModel> GetReminderLikeEventUser(int userId)
+        {
+            return db.Users.GetItem(userId).Session.Select(i => new EventModel(i.EventsOrganizers.Event, new SessionModel(i))).Where(i => i.CurSession.Date >= DateTime.Now && i.CurSession.Date < DateTime.Today.AddDays(8)).ToList();
+        }
+
         public bool Save()
         {
             if (db.Save() > 0) return true;

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -92,6 +93,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
                         {
                             WentIn = true;
                             Userlog = crud.User(login.GetUserlog().ID);
+                            ReminderLikeEventUser();
                         }
                     }
                 ));
@@ -135,6 +137,16 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         public int GetUser()
         {
             return Userlog == null ? -1 : Userlog.ID;
+        }
+
+        private void ReminderLikeEventUser()
+        {
+            List<EventModel> notifyLikeEvents = crud.GetReminderLikeEventUser(Userlog.ID);
+            if (notifyLikeEvents.Count == 0)
+                return;
+
+            ReminderPage remp = new ReminderPage(notifyLikeEvents);
+            remp.Show();
         }
     }
 
