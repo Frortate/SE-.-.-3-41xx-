@@ -27,8 +27,10 @@
             <local:LikeUEventPage/>
         </DataTemplate>
 
-        
 
+        <DataTemplate DataType="{x:Type local:ReportLikeEventPageViewModel}">
+            <local:ReportLikeEventPage/>
+        </DataTemplate>
 
     </Window.Resources>
 
@@ -46,7 +48,9 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtOpenLikePage">
         </EventTrigger>
 
-
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtReport">
+        </EventTrigger>
+        
     </Window.Triggers>
 
 
@@ -203,7 +207,7 @@
 
                     <Grid Grid.Row="5" >
                         <Button x:Name="ButtReport" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#000"
-                        Visibility="{Binding WentIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Visibility="{Binding WentIn, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding OpenReport}"
                         HorizontalContentAlignment="Center" Background="White" BorderBrush="Transparent" Height="Auto" Margin="5,7,4,3" >
                             <materialDesign:PackIcon   Kind="clipboardtextoutline" Foreground="#DD000000" Height="45" Width="45" Margin="0 0 0 0"/>
                             <Button.ToolTip>

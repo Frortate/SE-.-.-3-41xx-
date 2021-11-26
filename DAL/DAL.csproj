@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\IntDbRepository.cs" />
+    <Compile Include="Interface\IntReportRepository.cs" />
     <Compile Include="Interface\IntRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CategoryRepositorySQL.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Repository\EventRepositorySQL.cs" />
     <Compile Include="Repository\EventsOrganizersRepositorySQL.cs" />
     <Compile Include="Repository\PlaceRepositorySQL.cs" />
+    <Compile Include="Repository\ReportRepositorySQL.cs" />
     <Compile Include="Repository\SessionRepositorySQL.cs" />
     <Compile Include="Repository\TypeRepositorySQL.cs" />
     <Compile Include="Repository\UserRepositorySQL.cs" />

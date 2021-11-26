@@ -23,5 +23,9 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         bool Like(int userId, int sessionId);
 
         List<EventModel> GetReminderLikeEventUser(int userId);
+
+        ReportModel ReportUser(int userId, int month);
+
+        bool RegTrue(UserModel user);
     }
 }

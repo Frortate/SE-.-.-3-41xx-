@@ -8,6 +8,7 @@ using System.Configuration;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Util;
 using Microsoft.Toolkit.Uwp.Notifications;
 using System;
+using DAL.Interface;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_
 {
@@ -25,6 +26,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             var kernel = new StandardKernel(new ServiceModule(connection), new NinjectRegistrations());
 
             IDbCrud crud = kernel.Get<IDbCrud>();
+            IntReportRepository repServ = kernel.Get<IntReportRepository>();
 
 
             DataContext = new MainWindowViewModel(crud);

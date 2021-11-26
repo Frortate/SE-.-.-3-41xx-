@@ -12,13 +12,13 @@ using System.Windows;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_
 {
-    class PageLoginViewModel : INotifyPropertyChanged
+    class RegistrationWindowViewModel : INotifyPropertyChanged
     {
         IDbCrud crud;
         ILogin login;
 
 
-        public PageLoginViewModel(IDbCrud crud, ILogin login)
+        public RegistrationWindowViewModel(IDbCrud crud, ILogin login)
         {
             this.crud = crud;
             this.login = login;
@@ -36,31 +36,6 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
 
         public string PasswordCont { get { return login.GetPassword(); } }
 
-        private RelayCommand loginTrue;
-        public RelayCommand LoginTrue
-        {
-            get
-            {
-                return loginTrue ??
-                    (loginTrue = new RelayCommand(obj =>
-                    {
-                        UserModel result = crud.LoginTrue(new UserModel(Logined, PasswordCont));
-
-                        if (result != null)
-                            login.CloseLogin(true, result);
-                        else
-                        {
-
-                        }
-                        
-                        
-                        
-                    }
-                ));
-            }
-        }
-
-
         private RelayCommand registrationWindow;
         public RelayCommand RegistrationWindow
         {
@@ -69,11 +44,15 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
                 return registrationWindow ??
                     (registrationWindow = new RelayCommand(obj =>
                     {
-                        RegistrationWindow reg = new RegistrationWindow(crud);
-                        reg.Show();
+                        bool result = crud.RegTrue(new UserModel(Logined, PasswordCont));
+
+                        if (result)
+                            login.CloseLogin();
+
                     }
                 ));
             }
         }
+
     }
 }

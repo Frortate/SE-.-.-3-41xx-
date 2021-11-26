@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Command;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Interface;
 using SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table;
@@ -63,6 +64,20 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             }
         }
 
+        private RelayCommand openReport;
+        public RelayCommand OpenReport
+        {
+            get
+            {
+                return openReport ??
+                    (openReport = new RelayCommand(obj =>
+                    {
+                        TypePage = new ReportLikeEventPageViewModel(crud, Userlog.ID);
+                    }
+                ));
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -95,6 +110,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
                             Userlog = crud.User(login.GetUserlog().ID);
                             ReminderLikeEventUser();
                         }
+                        
                     }
                 ));
             }

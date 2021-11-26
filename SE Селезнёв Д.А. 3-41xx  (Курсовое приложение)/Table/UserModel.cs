@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using DAL.Table;
 
 namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложение_.Table
@@ -23,11 +24,14 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         public UserModel(string login, string password)
         {
             Login = login;
+            
             Password = password;
+              
         }
 
         public UserModel(User u)
         {
+
             ID = u.ID;
             Login = u.Login;
             Password = u.Password;

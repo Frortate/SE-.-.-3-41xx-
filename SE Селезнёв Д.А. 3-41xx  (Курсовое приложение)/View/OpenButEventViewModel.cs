@@ -16,19 +16,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         IDbCrud crud;
         IEvent iev;
 
-        private EventModel openEvent;
-
-        public EventModel OpenEvent
-        {
-            get { return openEvent; }
-            set
-            {
-                openEvent = value;
-                OnPropertyChanged("OpenEvent");
-            }
-        }
-
-
+        
 
         public OpenButEventViewModel(IDbCrud crud, IEvent iev, EventModel em)
         {
@@ -44,6 +32,19 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             if (WentIn)
                 CheckedForLike();
         }
+
+        private EventModel openEvent;
+
+        public EventModel OpenEvent
+        {
+            get { return openEvent; }
+            set
+            {
+                openEvent = value;
+                OnPropertyChanged("OpenEvent");
+            }
+        }
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
