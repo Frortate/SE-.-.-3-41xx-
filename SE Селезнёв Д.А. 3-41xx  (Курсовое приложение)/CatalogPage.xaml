@@ -16,115 +16,127 @@
             <Border.Effect>
                 <DropShadowEffect Direction="280" BlurRadius="30"/>
             </Border.Effect>
-             <Grid>
-             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column ="0" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="210" />
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="210" />
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="210"/>
-                    <ColumnDefinition Width="30"/>
-                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.Column ="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="210" />
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="210" />
+                        <ColumnDefinition Width="135"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
 
-
-
-
-                <Border Grid.Column="1"  CornerRadius="3" Background="White" Margin="0,10,0,0" Height="37" VerticalAlignment="Top">
+                    <TextBlock Grid.Column="0" Text="Тип:" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="20" Foreground="Black" Margin="430 17 0 0"/>
+                    <TextBlock Grid.Column="2" Text="Город:" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="20" Foreground="Black" Margin="35 17 0 0"/>
+                    <TextBlock Grid.Column="4" Text="Категория:" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="20" Foreground="Black" Margin="35 17 0 0"/>
+                    
+                    <Border Grid.Column="1"  CornerRadius="3" Background="White" Margin="0,10,0,0" Height="37" VerticalAlignment="Top">
                         <Border.Effect>
                             <DropShadowEffect Direction="280" BlurRadius="10" Opacity="0.5"/>
                         </Border.Effect>
                         <ComboBox HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="28" Width="190" ItemsSource="{Binding Types}" SelectedItem="{Binding FilterByType}" Background="White" BorderBrush="Black" Foreground="Black" VerticalAlignment="Center" Margin="10,4,10,5" >
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                </Border>
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Border>
 
-                <Border Grid.Column="3"  CornerRadius="3" Background="White" Margin="0,10,0,0" Height="37" VerticalAlignment="Top">
+                    <Border Grid.Column="3"  CornerRadius="3" Background="White" Margin="0,10,0,0" Height="37" VerticalAlignment="Top">
                         <Border.Effect>
                             <DropShadowEffect Direction="280" BlurRadius="10" Opacity="0.5"/>
                         </Border.Effect>
-                        <ComboBox VerticalAlignment="Center"  Height="28" Width="190" HorizontalContentAlignment="Center" ItemsSource="{Binding Cities}" SelectedItem="{Binding FilterByCity}" Background="White" BorderBrush="Black" Foreground="Black" HorizontalAlignment="Center" Margin="10,4,10,5">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                </Border>
 
-                <Border Grid.Column="5"  CornerRadius="3" Background="White" Margin="0,10,0,0" Height="37" VerticalAlignment="Top">
+                        <ComboBox VerticalAlignment="Center"  Height="28" Width="190" HorizontalContentAlignment="Center" ItemsSource="{Binding Cities}" SelectedItem="{Binding FilterByCity}" Background="White" BorderBrush="Black" Foreground="Black" HorizontalAlignment="Center" Margin="0,4,10,5">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                    </Border>
+
+
+
+
+
+                    <Border Grid.Column="5"  CornerRadius="3" Background="White" Margin="0,10,0,0" Height="37" VerticalAlignment="Top">
                         <Border.Effect>
                             <DropShadowEffect Direction="280" BlurRadius="10" Opacity="0.5"/>
                         </Border.Effect>
                         <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right"  Height="28" Width="190" HorizontalContentAlignment="Center" ItemsSource="{Binding Categories}" SelectedItem="{Binding FilterByCategory}" Background="White" Foreground="Black"  BorderBrush="Black" Margin="0,4,10,5" >
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Light" FontSize="17" Foreground="Black"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
 
-                    </ComboBox>
+                        </ComboBox>
 
-                </Border>
-            </Grid>
+                    </Border>
+                </Grid>
 
 
-            <Grid Grid.Row="1"  Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                
+                <Grid Grid.Row="1"  Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
 
 
                     <StackPanel x:Name="Content" >
-                        <ListBox HorizontalAlignment="Left" Margin="5 5 5 5" ItemsSource="{Binding Events}">
-                            <ListBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ListBox.ItemsPanel>
-                            <ListBox.ItemTemplate>
+                        <ScrollViewer Height="665" Margin=" 0 0 0 0">
+                            <ListBox HorizontalAlignment="Left" Margin="130 5 5 5" ItemsSource="{Binding Events}">
+                            
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                            
+                                <ListBox.ItemTemplate>
 
-                                <DataTemplate>
+                                    <DataTemplate>
 
-                                    <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
+                                        <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
                                 BorderBrush="#293133" Background="#293133" Foreground="Black" Padding="0" Width="250" Height="381" Margin="5 0 0 0" >
-                                        
-                                        <Grid>
-                                            <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
+
+                                            <Grid>
+                                                <Image Visibility="{Binding Path=IsNew, Converter={StaticResource BooleanToVisibilityConverter}}" Width="60" Height="60" 
                                                 Source="new.png"
                                                VerticalAlignment="Top" HorizontalAlignment="Right">
-                                            </Image>
-                                            <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
-                                                <Image  MaxHeight="355" Source="{Binding Path=Poster}" Stretch="Fill" Height="355" Margin="0 -1 0 0"/>
+                                                </Image>
+                                                <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Left" Panel.ZIndex="-99">
+                                                    <Image  MaxHeight="355" Source="{Binding Path=Poster}" Stretch="Fill" Height="355" Margin="0 -1 0 0"/>
 
-                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                    <TextBlock Grid.Column="0" FontSize="20" Text="{Binding Path=Title}" Foreground="White" Margin="0 2 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
-                                                    <TextBlock FontSize="16" Foreground="#bd4f4f" Text="{Binding Path=Ages.Age}" Margin="10 5 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
-                                                    <TextBlock FontSize="16" Foreground="#bd4f4f" Margin="0 2 0 0" Text="+" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <TextBlock Grid.Column="0" FontSize="20" Text="{Binding Path=Title}" Foreground="White" Margin="0 2 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
+                                                        <TextBlock FontSize="16" Foreground="#bd4f4f" Text="{Binding Path=Ages.Age}" Margin="10 5 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
+                                                        <TextBlock FontSize="16" Foreground="#bd4f4f" Margin="0 2 0 0" Text="+" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
+                                                    </StackPanel>
                                                 </StackPanel>
-                                            </StackPanel>
-                                        </Grid>
+                                            </Grid>
 
 
-                                    </Button>
-                                </DataTemplate>
+                                        </Button>
+                                    </DataTemplate>
 
-                            </ListBox.ItemTemplate>
+                                </ListBox.ItemTemplate>
+                           
                         </ListBox>
+                        </ScrollViewer>
                     </StackPanel>
-                
-            </Grid>
+
+                </Grid>
             </Grid>
         </Border>
     </Grid>

@@ -19,57 +19,58 @@
             <Grid x:Name="Content">
 
                 <StackPanel>
+                    <ScrollViewer Height="694" Margin=" 0 23 0 0">
+                        <ListBox HorizontalAlignment="Left" Margin="130 5 5 5" ItemsSource="{Binding Events}">
 
-                    <ListBox HorizontalAlignment="Left" Margin="5 5 5 5" ItemsSource="{Binding Events}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
 
-                        <ListBox.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
 
-                        <ListBox.ItemTemplate>
+                                <DataTemplate>
 
-                            <DataTemplate>
-
-                                <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
+                                    <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenEvent}" CommandParameter="{Binding Path=Title}"
                                  BorderBrush="#293133" Background="#293133" Foreground="Black" Padding="0" Width="250" Height="415" Margin="5 0 0 0" >
 
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="355"/>
-                                            <RowDefinition Height="60"/>
-                                        </Grid.RowDefinitions>
-
-                                        <Image Grid.Row="0" Width="250" Source="{Binding Path=Poster}" MaxHeight="355" Stretch="Fill" Height="355"/>
-
-                                        <Grid Margin="30 0 0 0" Grid.Row="1">
+                                        <Grid>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="30"/>
-                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="355"/>
+                                                <RowDefinition Height="60"/>
                                             </Grid.RowDefinitions>
 
-                                            <Grid Grid.Row="0" >
-                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                    <TextBlock Grid.Column="0" FontSize="20" Text="{Binding Path=Title}" Foreground="White" Margin="-15 2 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
-                                                    <TextBlock FontSize="16" Foreground="#bd4f4f" Text="{Binding Path=Ages.Age}" Margin="10 5 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
-                                                    <TextBlock FontSize="16" Foreground="#bd4f4f" Margin="0 2 0 0" Text="+" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
-                                                </StackPanel>
-                                            </Grid>
+                                            <Image Grid.Row="0" Width="250" Source="{Binding Path=Poster}" MaxHeight="355" Stretch="Fill" Height="355"/>
 
-                                            <Grid Grid.Row="1">
-                                                <TextBlock VerticalAlignment="Center" FontSize="18" Text="{Binding Path=CurSession.Date}" Foreground="#daf2bb" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
+                                            <Grid Margin="30 0 0 0" Grid.Row="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="30"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="0" >
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <TextBlock Grid.Column="0" FontSize="20" Text="{Binding Path=Title}" Foreground="White" Margin="-15 2 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
+                                                        <TextBlock FontSize="16" Foreground="#bd4f4f" Text="{Binding Path=Ages.Age}" Margin="10 5 0 0" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
+                                                        <TextBlock FontSize="16" Foreground="#bd4f4f" Margin="0 2 0 0" Text="+" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" FontWeight="Bold"/>
+                                                    </StackPanel>
+                                                </Grid>
+
+                                                <Grid Grid.Row="1">
+                                                    <TextBlock VerticalAlignment="Center" FontSize="18" Text="{Binding Path=CurSession.Date}" Foreground="#daf2bb" FontFamily="/SE Селезнёв Д.А. 3-41xx  (Курсовое приложение);component/#CQ Mono [RUS by Daymarius]" />
+                                                </Grid>
                                             </Grid>
                                         </Grid>
-                                    </Grid>
 
-                                </Button>
-                            </DataTemplate>
+                                    </Button>
+                                </DataTemplate>
 
-                        </ListBox.ItemTemplate>
+                            </ListBox.ItemTemplate>
 
 
-                    </ListBox>
+                        </ListBox>
+                    </ScrollViewer>
                 </StackPanel>
 
             </Grid>
