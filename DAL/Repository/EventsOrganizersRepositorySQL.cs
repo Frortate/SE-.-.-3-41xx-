@@ -8,7 +8,7 @@ using DAL.Interface;
 
 namespace DAL.Repository
 {
-    public class EventsOrganizersRepositorySQL : IntRepository<EventsOrganizers>
+    public class EventsOrganizersRepositorySQL : IRepository<EventsOrganizers>
     {
         private SEContext db;
         public EventsOrganizersRepositorySQL(SEContext dbContext)

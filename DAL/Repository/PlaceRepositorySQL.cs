@@ -8,7 +8,7 @@ using DAL.Interface;
 
 namespace DAL.Repository
 {
-    public class PlaceRepositorySQL : IntRepository<Place>
+    public class PlaceRepositorySQL : IRepository<Place>
     {
         private SEContext db;
         public PlaceRepositorySQL(SEContext dbContext)

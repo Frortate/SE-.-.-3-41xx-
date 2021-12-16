@@ -8,7 +8,7 @@ using DAL.Interface;
 
 namespace DAL.Repository
 {
-    public class SessionRepositorySQL : IntRepository<Session>
+    public class SessionRepositorySQL : IRepository<Session>
     {
         private SEContext db;
         public SessionRepositorySQL(SEContext dbContext)

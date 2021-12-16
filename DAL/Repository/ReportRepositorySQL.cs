@@ -8,7 +8,7 @@ using DAL.Table;
 
 namespace DAL.Repository
 {
-    public class ReportRepositorySQL : IntReportRepository
+    public class ReportRepositorySQL : IReportRepository
     {
         private SEContext dbcontext;
         public ReportRepositorySQL(SEContext rep)

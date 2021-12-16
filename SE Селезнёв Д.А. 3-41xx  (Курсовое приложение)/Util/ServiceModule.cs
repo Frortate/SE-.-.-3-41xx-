@@ -13,7 +13,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
         }
         public override void Load()
         {
-            Bind<IntDbRepository>().To<DbRepositorySQL>().InSingletonScope().WithConstructorArgument(connectionString);
+            Bind<IDbRepository>().To<DbRepositorySQL>().InSingletonScope().WithConstructorArgument(connectionString);
 
         }
     }

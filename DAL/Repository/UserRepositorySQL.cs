@@ -9,7 +9,7 @@ using DAL.Interface;
 namespace DAL.Repository
 {
    
-        public class UserRepositorySQL : IntRepository<User>
+        public class UserRepositorySQL : IRepository<User>
         {
             private SEContext db;
             public UserRepositorySQL(SEContext dbContext)

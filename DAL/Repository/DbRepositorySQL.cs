@@ -8,7 +8,7 @@ using DAL.Interface;
 
 namespace DAL.Repository
 {
-    public class DbRepositorySQL : IntDbRepository
+    public class DbRepositorySQL : IDbRepository
     {
         private SEContext db;
 
@@ -25,7 +25,7 @@ namespace DAL.Repository
             db = new SEContext();
         }
 
-        public IntRepository<User> Users
+        public IRepository<User> Users
         {
             get
             {
@@ -35,7 +35,7 @@ namespace DAL.Repository
             }
         }
 
-        public IntRepository<Session> Sessions
+        public IRepository<Session> Sessions
         {
             get
             {
@@ -45,7 +45,7 @@ namespace DAL.Repository
             }
         }
 
-        public IntRepository<Event> Events
+        public IRepository<Event> Events
         {
             get
             {
@@ -55,7 +55,7 @@ namespace DAL.Repository
             }
         }
 
-        public IntRepository<Place> Places
+        public IRepository<Place> Places
         {
             get
             {
@@ -64,7 +64,7 @@ namespace DAL.Repository
                 return placeRepository;
             }
         }
-        public IntRepository<City> Cities
+        public IRepository<City> Cities
         {
             get
             {
@@ -74,7 +74,7 @@ namespace DAL.Repository
             }
         }
 
-        public IntRepository<EventsOrganizers> EventsOrganizers
+        public IRepository<EventsOrganizers> EventsOrganizers
         {
             get
             {
@@ -84,7 +84,7 @@ namespace DAL.Repository
             }
         }
 
-        public IntRepository<Category> Categories
+        public IRepository<Category> Categories
         {
             get
             {
@@ -94,7 +94,7 @@ namespace DAL.Repository
             }
         }
 
-        public IntRepository<Type> Types
+        public IRepository<Type> Types
         {
             get
             {

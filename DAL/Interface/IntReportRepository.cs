@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Interface
 {
-    public interface IntReportRepository
+    public interface IReportRepository
     {
         Report ReportUser(int userId, int month);
     }

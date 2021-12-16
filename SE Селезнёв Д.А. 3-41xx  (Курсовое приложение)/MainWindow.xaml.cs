@@ -26,7 +26,7 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
             var kernel = new StandardKernel(new ServiceModule(connection), new NinjectRegistrations());
 
             IDbCrud crud = kernel.Get<IDbCrud>();
-            IntReportRepository repServ = kernel.Get<IntReportRepository>();
+            IReportRepository repServ = kernel.Get<IReportRepository>();
 
 
             DataContext = new MainWindowViewModel(crud);

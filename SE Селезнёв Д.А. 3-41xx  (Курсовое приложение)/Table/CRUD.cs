@@ -14,10 +14,10 @@ namespace SE_Селезнёв_Д.А._3_41xx___Курсовое_приложен�
 {
     public class CRUD : IDbCrud
     {
-        IntDbRepository db;
-        IntReportRepository report;
+        IDbRepository db;
+        IReportRepository report;
 
-        public CRUD(IntDbRepository repos, IntReportRepository report)
+        public CRUD(IDbRepository repos, IReportRepository report)
         {
             db = repos;
             this.report = report;

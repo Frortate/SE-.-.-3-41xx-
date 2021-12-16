@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Interface
 {
-    public interface IntRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         List<T> GetAll();
         T GetItem(int id);

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DAL.Repository
 {
-    public class CityRepositorySQL : IntRepository<City>
+    public class CityRepositorySQL : IRepository<City>
     {
         private SEContext db;
         public CityRepositorySQL(SEContext dbContext)

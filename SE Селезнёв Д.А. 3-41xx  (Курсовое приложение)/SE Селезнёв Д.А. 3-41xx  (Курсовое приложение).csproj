@@ -129,9 +129,9 @@
     <Compile Include="Table\ReportModel.cs" />
     <Compile Include="Util\NinjectRegistrations.cs" />
     <Compile Include="Util\ServiceModule.cs" />
-    <Compile Include="View\CatalogPageViewModel.cs" />
-    <Compile Include="View\LikeUEventPageViewModel.cs" />
-    <Compile Include="View\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\CatalogPageViewModel.cs" />
+    <Compile Include="ViewModel\LikeUEventPageViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="Table\AgesModel.cs" />
     <Compile Include="Table\CategoryModel.cs" />
     <Compile Include="Table\CityModel.cs" />
@@ -143,11 +143,11 @@
     <Compile Include="Table\SessionModel.cs" />
     <Compile Include="Table\TypeModel.cs" />
     <Compile Include="Table\UserModel.cs" />
-    <Compile Include="View\OpenButEventViewModel.cs" />
-    <Compile Include="View\PageLoginViewModel.cs" />
-    <Compile Include="View\RegistrationWindowViewModel.cs" />
-    <Compile Include="View\ReminderPageViewModel.cs" />
-    <Compile Include="View\ReportLikeEventPageViewModel.cs" />
+    <Compile Include="ViewModel\OpenButEventViewModel.cs" />
+    <Compile Include="ViewModel\PageLoginViewModel.cs" />
+    <Compile Include="ViewModel\RegistrationWindowViewModel.cs" />
+    <Compile Include="ViewModel\ReminderPageViewModel.cs" />
+    <Compile Include="ViewModel\ReportLikeEventPageViewModel.cs" />
     <Page Include="CatalogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
